@@ -8,22 +8,35 @@ body {
     text-align: center;
     color: #222222;
     flex-direction: column;
+    font-family: "Segoe UI", Arial, sans-serif;
 }
 
 .calculator {
+    max-width: 400px;
     padding: 15px;
     background-color: #616E7C;
+    border-radius: 10px;
 }
 
 .screen {
-    background-color: #616E7C;
+    background-color: #CBD2D9;
     width: 100%;
     height: 130px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    border: solid 2px;
+    padding: 2px;
 }
 
 .input-button {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    box-sizing: border-box;
+    margin-top: 5px;
 }
 
 button {
@@ -34,12 +47,73 @@ button {
     color: #1F2933;
     font-weight: 540;
     border-radius: 5px;
+    box-sizing: border-box;
+    border: solid 2px;
 }
 
-#lightButton {
+button:hover {
     background-color: #CBD2D9;
+}
+
+#lightButton, .lightBTN {
+    background-color: #CBD2D9;
+}
+
+#lightButton:hover, .lightBTN:hover {
+    background-color: #9AA5B1;
 }
 
 #equalButton {
     background-color: #E4E7EB;
+}
+
+#equalButton:hover {
+    background-color: #7B8794;
+}
+
+#previousInput {
+    width: 300px;
+    max-width: 300px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    padding: 0 8px;
+    font-size: 16px;
+}
+
+#currentInput {
+    height: 70%;
+    width: 300px;
+    max-width: 300px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 40px;
+    box-sizing: border-box;
+    padding: 0 8px;
+    font-weight: 600;
+}
+
+#undo {
+    margin-left: auto;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+#historyIcon {
+    height: 25px;
+}
+
+.history-icon-background {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.history-icon-background:hover {
+    background-color: #9AA5B1;
+    opacity: 0.7;
 }
