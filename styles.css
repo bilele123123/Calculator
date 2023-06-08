@@ -55,11 +55,11 @@ button:hover {
     background-color: #CBD2D9;
 }
 
-#lightButton, .lightBTN {
+.lightBTN {
     background-color: #CBD2D9;
 }
 
-#lightButton:hover, .lightBTN:hover {
+.lightBTN:hover {
     background-color: #9AA5B1;
 }
 
@@ -75,6 +75,7 @@ button:hover {
     width: 300px;
     max-width: 300px;
     border-radius: 5px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: flex-end;

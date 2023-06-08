@@ -20,32 +20,32 @@
                         <input id="historyIcon" type="image" src="assets/history-icon.png" alt="Undo Button">
                     </div>
                 </div>
-                <div id="previousInput">92380 &times; </div>
-                <div id="currentInput">820,371,232</div>
+                <div id="previousInput"></div>
+                <div id="currentInput"></div>
             </div>
             <div class="input-button">
                 <button data-operator="%">%</button>
-                <button>CE</button>
-                <button>C</button>
-                <button>←</button>
+                <button id="clear-everything">CE</button>
+                <button id="clear">C</button>
+                <button id="backspace">←</button>
                 <button data-operator="divisor">1<sub>/x</sub></button>
                 <button data-operator="power">x<sup>2</sup></button>
                 <button data-operator="root">&#8730;x</button>
                 <button data-operator="/">÷</button>
-                <button data-number="7" id="lightButton">7</button>
-                <button data-number="8" id="lightButton">8</button>
-                <button data-number="9" id="lightButton">9</button>
+                <button data-number="7" class="lightBTN" >7</button>
+                <button data-number="8" class="lightBTN" >8</button>
+                <button data-number="9" class="lightBTN" >9</button>
                 <button data-operator="x">&times;</button>
-                <button data-number="4" id="lightButton">4</button>
-                <button data-number="5" id="lightButton">5</button>
-                <button data-number="6" id="lightButton">6</button>
-                <button>-</button>
-                <button data-number="1" id="lightButton">1</button>
-                <button data-number="2" id="lightButton">2</button>
-                <button data-number="3" id="lightButton">3</button>
-                <button>+</button>
-                <button data-operator="negative" id="lightButton">+/-</button>
-                <button data-number="0" id="lightButton">0</button>
+                <button data-number="4" class="lightBTN" >4</button>
+                <button data-number="5" class="lightBTN" >5</button>
+                <button data-number="6" class="lightBTN" >6</button>
+                <button data-operator="-">-</button>
+                <button class="lightBTN" data-number="1">1</button>
+                <button class="lightBTN" data-number="2">2</button>
+                <button class="lightBTN" data-number="3">3</button>
+                <button data-operator="addition">+</button>
+                <button data-operator="negative" class="lightBTN" >+/-</button>
+                <button data-number="0" class="lightBTN" >0</button>
                 <button class="lightBTN" id="pointBTN">.</button>
                 <button id="equalButton">=</button>
             </div>
@@ -54,3 +54,5 @@
 </body>
 
 </html>
+
+<script src="scripts.js"></script>
