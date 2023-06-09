@@ -12,35 +12,92 @@ const historyBTN = document.getElementById("historyIcon");
 const currentInput = document.getElementById("currentInput");
 const previousInput = document.getElementById("previousInput");
 
-numberBTN.forEach(button => {
-    button.addEventListener("click", () => {
-        const number = button.dataset.number;
-        currentInput.textContent += number;
-    })
-})
+numberBTN.forEach((button) =>
+  button.addEventListener('click', () => updateScreen(button.textContent))
+)
 
 operatorBTN.forEach(button => {
     button.addEventListener("click", () => updateOperator(button.textContent))
 })
 
+clearEverythingBTN.addEventListener("click", () => clearScreen());
+clearBTN.addEventListener("click", () => clearCurrentScreen());
+backspaceBTN.addEventListener("click", () => backSpace());
+
+equalBTN.addEventListener("click", updatePreviousInput)
+
+function updateScreen(number) {
+    if (currentInput.textContent === "")
+    {
+        clearScreen();
+    }
+    currentInput.textContent += number;
+}
+
 function updateOperator(operator) {
     currentNumber = currentInput.textContent;
-    if (operator.includes("/x"))
-    {
-        previousInput.textContent = `1/(${currentNumber})`;
+    if (operator.includes("/x")) {
+        currentInput.textContent = `1/(${currentNumber})`;
     }
-    else if (operator.includes("x") && operator.includes("2"))
-    {
-        previousInput.textContent = `(${currentNumber}^2)`;
+    else if (operator.includes("x") && operator.includes("2")) {
+        currentInput.textContent = `(${currentNumber}^2) `;
     }
-    else if (operator === "√x")
-    {
-        previousInput.textContent = `√(${currentNumber})`;
+    else if (operator === "√x") {
+        currentInput.textContent = `√(${currentNumber}) `;
     }
-    else
-    {
-        previousInput.textContent = `${currentNumber} ${operator}`;
+    else if (operator === "+/-") {
+        currentInput.textContent = `-${currentNumber}`;
     }
+    else {
+        currentInput.textContent = `${currentNumber} ${operator} `;
+    }
+}
+
+function updatePreviousInput() {
+    const currentInputText = currentInput.textContent.trim();
+    const operatorIndex = currentInputText.search(/[\+\-\×\÷]/);
+    const operand = currentInputText.slice(0, operatorIndex).trim();
+    const operator = currentInputText[operatorIndex].trim();
+    const currentNumber = parseFloat(currentInputText.slice(operatorIndex + 1).trim());
+  
+    const result = calculate(operand, operator, currentNumber);
+  
+    previousInput.textContent = `${operand} ${operator} ${currentNumber}`;
+    currentInput.textContent = `${result}`;
+  }
+  
+function calculate(operand, operator, currentNumber) {
+    let result;
+    switch (operator) {
+      case "+":
+        result = add(parseFloat(operand), currentNumber);
+        break;
+      case "-":
+        result = subtract(parseFloat(operand), currentNumber);
+        break;
+      case "×":
+        result = multiply(parseFloat(operand), currentNumber);
+        break;
+      case "÷":
+        result = division(parseFloat(operand), currentNumber);
+        break;
+      default:
+        break;
+    }
+    return result;
+  }
+
+function clearScreen() {
+    currentInput.textContent = "";
+    previousInput.textContent = "";
+}
+
+function clearCurrentScreen() {
+    currentInput.textContent = " ";
+}
+
+function backSpace() {
+    currentInput.textContent = currentInput.textContent.toString().slice(0, -1);
 }
 
 function percent(num1) {
