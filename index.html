@@ -9,19 +9,19 @@
 </head>
 
 <body>
-    <div class="title">    <h1>Calculator App</h1>
-    </div>
-
+    <div class="title"><h1>Calculator App</h1></div>
     <div id="container">
         <div class="calculator">
             <div class="screen">
-                <div id="undo">
+                <div id="history">
                     <div class="history-icon-background">
                         <input id="historyIcon" type="image" src="assets/history-icon.png" alt="Undo Button">
                     </div>
                 </div>
-                <div id="previousInput"></div>
-                <div id="currentInput"></div>
+                <div id="calculatorScreen" class="calculator-screen">
+                    <div id="previousInput"></div>
+                    <div id="currentInput"></div>
+                </div>
             </div>
             <div class="input-button">
                 <button data-operator="%">%</button>
