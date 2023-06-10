@@ -15,6 +15,9 @@ JavaScript: Handles the logic and calculations for the calculator
 HTML: Provides the structure and elements of the web page
 CSS: Defines the styling and layout of the calculator
 
+Live Demo Link: https://bilele123123.github.io/Calculator/
+
 ![preview-picture01](/assets/preview.png)
 ![preview-picture02](/assets/preview02.png)
 ![preview-picture03](/assets/preview03.png)
+
